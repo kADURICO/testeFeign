@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface DoadorRepository extends JpaRepository<Doador, Integer> {
     @Query("SELECT d FROM Doador d WHERE d.status >=0")
-    List<Doador> listarDoadoressAtivos();
+    List<Doador> listarDoadoresAtivos();
 
     @Query("SELECT d FROM Doador d WHERE d.id=:id AND d.status>=0")
     Doador obterDoadorAtivoPorId(@Param("id") Integer id);
