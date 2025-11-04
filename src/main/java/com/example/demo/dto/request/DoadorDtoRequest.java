@@ -1,6 +1,7 @@
-package com.example.demo.dto;
+package com.example.demo.dto.request;
 
 public class DoadorDtoRequest {
+
     private String nome;
     private String endereco;
     private Integer status;

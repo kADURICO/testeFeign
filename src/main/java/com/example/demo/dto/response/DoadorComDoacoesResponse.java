@@ -1,23 +1,14 @@
-package com.example.demo.entity;
+package com.example.demo.dto.response;
 
-import jakarta.persistence.*;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.openfeign.EnableFeignClients;
+import java.util.List;
 
-@Entity
-@EnableFeignClients
-@SpringBootApplication
-public class Doador {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="doador_id")
+public class DoadorComDoacoesResponse {
+
     private Integer id;
-    @Column(name = "doador_nome")
     private String nome;
-    @Column(name = "doador_endereco")
     private String endereco;
-    @Column(name = "doador_status")
     private Integer status;
+    private List<DoacaoDtoResponse> doacoes;
 
     public Integer getId() {
         return id;
@@ -49,5 +40,13 @@ public class Doador {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public List<DoacaoDtoResponse> getDoacoes() {
+        return doacoes;
+    }
+
+    public void setDoacoes(List<DoacaoDtoResponse> doacoes) {
+        this.doacoes = doacoes;
     }
 }
